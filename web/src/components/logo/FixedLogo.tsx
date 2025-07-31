@@ -32,25 +32,10 @@ export const LogoComponent = memo(function LogoComponent({
         ${!show && "mobile:hidden"}
        flex text-text-900 items-center gap-x-1`}
     >
-      {enterpriseSettings && enterpriseSettings.application_name ? (
-        <>
-          <div className="flex-none my-auto">
-            <Logo height={24} width={24} />
-          </div>
-          <div className="w-full">
-            <HeaderTitle backgroundToggled={backgroundToggled}>
-              {enterpriseSettings.application_name}
-            </HeaderTitle>
-            {!NEXT_PUBLIC_DO_NOT_USE_TOGGLE_OFF_DANSWER_POWERED && (
-              <p className="text-xs text-left text-subtle whitespace-nowrap overflow-hidden text-ellipsis">
-                Powered by Onyx
-              </p>
-            )}
-          </div>
-        </>
-      ) : (
+      <div className="flex items-center gap-x-1">
+        <Logo height={24} width={24} />
         <LogoType />
-      )}
+      </div>
     </div>
   );
 });

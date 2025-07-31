@@ -10,9 +10,8 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { pageType } from "@/components/sidebar/types";
-import { Logo } from "../logo/Logo";
+import { Logo, LogoType } from "../logo/Logo";
 import Link from "next/link";
-import { LogoComponent } from "@/components/logo/FixedLogo";
 
 export default function LogoWithText({
   toggleSidebar,
@@ -49,11 +48,10 @@ export default function LogoWithText({
           {!toggled ? (
             <Logo className="desktop:hidden" height={24} width={24} />
           ) : (
-            <LogoComponent
-              show={toggled}
-              enterpriseSettings={enterpriseSettings!}
-              backgroundToggled={toggled}
-            />
+            <div className="flex items-center gap-x-1">
+              {/* <Logo height={24} width={24} /> */}
+              <LogoType />
+            </div>
           )}
 
           <FiSidebar
@@ -65,7 +63,7 @@ export default function LogoWithText({
         </div>
       ) : (
         <div className="mr-1 invisible mb-auto h-6 w-6">
-          <Logo height={24} width={24} />
+          {/* <Logo height={24} width={24} /> */}
         </div>
       )}
 
@@ -73,12 +71,12 @@ export default function LogoWithText({
         <div
           className={`${
             showArrow ? "desktop:hidden" : "invisible"
-          } break-words inline-block w-fit text-text-700 dark:text-neutral-300 text-xl`}
+          } break-words inline-block w-fit text-text-700 dark:text-neutral-300 text-xl mr-4`}
         >
-          <LogoComponent
-            enterpriseSettings={enterpriseSettings!}
-            backgroundToggled={toggled}
-          />
+          <div className="flex items-center gap-x-1">
+            {/* <Logo height={24} width={24} /> */}
+            <LogoType />
+          </div>
         </div>
       )}
       {page == "chat" && !showArrow && (

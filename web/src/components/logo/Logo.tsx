@@ -2,7 +2,7 @@
 
 import { useContext } from "react";
 import { SettingsContext } from "../settings/SettingsProvider";
-import { OnyxIcon, OnyxLogoTypeIcon } from "../icons/icons";
+import { FaktionIcon, FaktionLogoTypeIcon } from "../icons/icons";
 
 export function Logo({
   height,
@@ -27,31 +27,11 @@ export function Logo({
   height = height || defaultHeight;
   width = width || defaultWidth;
 
-  if (
-    !settings ||
-    !settings.enterpriseSettings ||
-    !settings.enterpriseSettings.use_custom_logo
-  ) {
-    return (
-      <div style={{ height, width }} className={className}>
-        <OnyxIcon
-          size={height}
-          className={`${className} dark:text-[#fff] text-[#000]`}
-        />
-      </div>
-    );
-  }
-
   return (
-    <div
-      style={{ height, width }}
-      className={`flex-none relative ${className}`}
-    >
-      {/* TODO: figure out how to use Next Image here */}
-      <img
-        src="/api/enterprise-settings/logo"
-        alt="Logo"
-        style={{ objectFit: "contain", height, width }}
+    <div style={{ height, width }} className={className}>
+      <FaktionIcon
+        size={height}
+        className={`${className} dark:text-[#fff] text-[#000]`}
       />
     </div>
   );
@@ -63,7 +43,7 @@ export function LogoType({
   size?: "small" | "default" | "large";
 }) {
   return (
-    <OnyxLogoTypeIcon
+    <FaktionLogoTypeIcon
       size={115}
       className={`items-center w-full dark:text-[#fff]`}
     />

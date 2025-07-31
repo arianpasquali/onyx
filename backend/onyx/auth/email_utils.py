@@ -28,8 +28,9 @@ from onyx.configs.app_configs import SMTP_SERVER
 from onyx.configs.app_configs import SMTP_USER
 from onyx.configs.app_configs import WEB_DOMAIN
 from onyx.configs.constants import AuthType
+from onyx.configs.constants import FAKTION_DEFAULT_SUPPORT_CONTACT_EMAIL
+from onyx.configs.constants import NO_REPLY_EMAIL
 from onyx.configs.constants import ONYX_DEFAULT_APPLICATION_NAME
-from onyx.configs.constants import ONYX_SLACK_URL
 from onyx.db.models import User
 from onyx.server.runtime.onyx_runtime import OnyxRuntime
 from onyx.utils.logger import setup_logger
@@ -163,7 +164,7 @@ def build_html_email(
 ) -> str:
     slack_fragment = ""
     if application_name == ONYX_DEFAULT_APPLICATION_NAME:
-        slack_fragment = f'<br>Have questions? Join our Slack community <a href="{ONYX_SLACK_URL}">here</a>.'
+        slack_fragment = f'<br>Have questions? Get in touch via email <a href="{FAKTION_DEFAULT_SUPPORT_CONTACT_EMAIL}">here</a>.'
 
     if cta_text and cta_link:
         cta_block = f'<a class="cta-button" href="{cta_link}">{cta_text}</a>'
@@ -210,7 +211,7 @@ def send_email_with_sendgrid(
     mail_from: str = EMAIL_FROM,
     inline_png: tuple[str, bytes] | None = None,
 ) -> None:
-    from_email = Email(mail_from) if mail_from else Email("noreply@onyx.app")
+    from_email = Email(mail_from) if mail_from else Email(NO_REPLY_EMAIL)
     to_email = To(user_email)
 
     mail = Mail(

@@ -3,14 +3,14 @@ repos:
     rev: 25.1.0
     hooks:
     - id: black
-      language_version: python3.11
+      language_version: python3.10
 
   # this is a fork which keeps compatibility with black
   - repo: https://github.com/wimglenn/reorder-python-imports-black
     rev: v3.14.0
     hooks:
     - id: reorder-python-imports
-      args: ['--py311-plus', '--application-directories=backend/']
+      args: ['--py310-plus', '--application-directories=backend/']
       # need to ignore alembic files, since reorder-python-imports gets confused
       # and thinks that alembic is a local package since there is a folder
       # in the backend directory called `alembic`

@@ -3,9 +3,13 @@ import socket
 from enum import auto
 from enum import Enum
 
-ONYX_DEFAULT_APPLICATION_NAME = "Onyx"
+ONYX_DEFAULT_APPLICATION_NAME = "Faktion AI Agents Hub"
 ONYX_SLACK_URL = "https://join.slack.com/t/onyx-dot-app/shared_invite/zt-2twesxdr6-5iQitKZQpgq~hYIZ~dv3KA"
 ONYX_EMAILABLE_LOGO_MAX_DIM = 512
+
+FAKTION_DEFAULT_SUPPORT_CONTACT_EMAIL = "support@faktion.com"
+
+NO_REPLY_EMAIL = "noreply@faktion.com"
 
 SOURCE_TYPE = "source_type"
 # stored in the `metadata` of a chunk. Used to signify that this chunk should
@@ -27,7 +31,7 @@ TENANT_ID_COOKIE_NAME = "onyx_tid"  # tenant id - for workaround cases
 ANONYMOUS_USER_COOKIE_NAME = "onyx_anonymous_user"
 
 NO_AUTH_USER_ID = "__no_auth_user__"
-NO_AUTH_USER_EMAIL = "anonymous@onyx.app"
+NO_AUTH_USER_EMAIL = "anonymous@faktion.com"
 
 # For chunking/processing chunks
 RETURN_SEPARATOR = "\n\r\n"

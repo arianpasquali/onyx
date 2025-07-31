@@ -34,7 +34,7 @@ function BackToOnyxButton({
     <div className="absolute bottom-0 bg-background w-full flex border-t border-border py-4">
       <div className="mx-auto">
         <Link href="/chat">
-          Back to {enterpriseSettings?.application_name || "Onyx Chat"}
+          Back to {enterpriseSettings?.application_name || "Faktion AI Hub"}
         </Link>
       </div>
       <div

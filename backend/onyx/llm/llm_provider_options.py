@@ -54,6 +54,8 @@ OPEN_AI_MODEL_NAMES = [
     "o1",
     "gpt-4",
     "gpt-4.1",
+    "gpt-4.1-mini",
+    "gpt-4.1-nano",
     "gpt-4o",
     "gpt-4o-mini",
     "o1-preview",

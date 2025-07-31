@@ -45,7 +45,7 @@ export function FederatedOAuthModal({
   };
 
   const applicationName =
-    settings?.enterpriseSettings?.application_name || "Onyx";
+    settings?.enterpriseSettings?.application_name || "Faktion AI Hub";
 
   if (skipCount >= MAX_SKIP_COUNT) {
     return (
